@@ -13,7 +13,11 @@ d= 1/(L/CV)^2;%Grid size
 %The primarily tridiagonal structure is a simple Toeplitz matrix; Including
 %the same node twice in the domain necessitates a modification so the 2nd
 %derivative jumps the coincident node
-Theta = (toeplitz([-2*d-4*Bi, d, 2:CV<0])+fliplr(blkdiag([0,d],zeros(CV-1,CV-3),[d,0]))) \ -and(0:L/CV:L>xH,0:L/CV:L<xH+LH)'
+Theta = ( toeplitz([-2*d-4*Bi, d, 2:CV<0])...
+        +fliplr(blkdiag([0,d],zeros(CV-1,CV-3),[d,0])) )...
+        \ -and(0:L/CV:L>xH,0:L/CV:L<xH+LH)'
 
 
-plot(0:L/CV:L,Theta), xlabel('Axial Location (x/D)'), ylabel('Non-dimensional Temperature (theta)')
+plot(0:L/CV:L,Theta)
+xlabel('Axial Location (x/D)')
+ylabel('Non-dimensional Temperature (theta)')
