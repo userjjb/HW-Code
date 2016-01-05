@@ -18,6 +18,6 @@ Theta = ( toeplitz([-2*d-4*Bi, d, 2:CV<0])...
         \ -and(0:L/CV:L>xH,0:L/CV:L<xH+LH)'
 
 
-plot(0:L/CV:L,Theta)
+plot(0:L/CV:L,Theta), xlabel('Axial Location (x/D)'), ylabel('Non-dimensional Temperature (theta)')
 xlabel('Axial Location (x/D)')
 ylabel('Non-dimensional Temperature (theta)')
